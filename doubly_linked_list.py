@@ -13,13 +13,22 @@ class DoublyLinkedList:
         self.length = 1
 
     def print_list(self):
+        """
+        Print the value of each Node of the Linked List
+        :return: None
+        """
         temp_node = self.head
 
         while temp_node:
-            print(temp_node.value )
+            print(temp_node.value)
             temp_node = temp_node.next
 
     def append(self, value):
+        """
+        Append a node with the given value to the DLL
+        :param value: The value of the Node to be appended
+        :return: True if the Node is successfully appended.
+        """
         new_node = Node(value)
 
         if self.length == 0:
@@ -35,6 +44,10 @@ class DoublyLinkedList:
         return True
 
     def pop(self):
+        """
+        Removes the last node of the DLL
+        :return: Node Object that was removed
+        """
         if self.length == 0:
             return None
 
@@ -53,6 +66,11 @@ class DoublyLinkedList:
         return remove_node
 
     def prepend(self, value):
+        """
+        Add a node with the given value to the front of the DLL
+        :param value: The value of the Node to be prepended
+        :return: True when the Node is successfully prepend
+        """
         new_node = Node(value)
 
         if self.length == 0:
@@ -68,6 +86,10 @@ class DoublyLinkedList:
         return True
 
     def pop_first(self):
+        """
+        Removes the first Node in the DLL
+        :return: The Node that was removed, or None if no Node is found.
+        """
         if self.length == 0:
             return None
 
@@ -86,6 +108,11 @@ class DoublyLinkedList:
         return remove_node
 
     def get(self, index):
+        """
+        Get the value of the Node at the specified index
+        :param index: The index of the Node to be found
+        :return: The node at the specified index
+        """
         if index < 0 or index >= self.length:
             return None
 
@@ -103,6 +130,12 @@ class DoublyLinkedList:
         return get_node
 
     def set_value(self, index, value):
+        """
+        Set the value of the Node at the specified index to the given value.
+        :param index: The index of the Node to be changed
+        :param value: The new value of the Node
+        :return: Bool (True if the Node at the index is found and successfully changed, False otherwise)
+        """
         set_node = self.get(index)
 
         if set_node:
@@ -112,6 +145,12 @@ class DoublyLinkedList:
         return False
 
     def insert(self, index, value):
+        """
+        Insert a new Node with the given Value at the given index
+        :param index: Index where the new Node will be inserted
+        :param value: Value of the new Node
+        :return: Bool (True if successfully inserted, False otherwise)
+        """
         new_node = Node(value)
 
         if index < 0 or index > self.length:
@@ -135,6 +174,11 @@ class DoublyLinkedList:
         return True
 
     def remove(self, index):
+        """
+        Remove the Node at the given index
+        :param index: The index of the node to be removed
+        :return: The removed Node
+        """
         if index < 0 or index >= self.length:
             return None
 
